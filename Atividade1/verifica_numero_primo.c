@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 
 int IsNumeroPrimo(int numero){
     int resultado = 0;
@@ -15,13 +16,16 @@ int IsNumeroPrimo(int numero){
     else
         return 0;
 }
-int main(int argc, int argv[]){
+int main(int argc, char *argv[]){
     //printf("%d", num);
+    int num = atoi(argv[1]);
+    
+   // printf("\n%s - %d", argv[1], num);
 
-    if(IsNumeroPrimo(argv[1]) == 1){
+    if(IsNumeroPrimo(num) == 1){
         printf("1");
     }
     else{
         printf("0");
-    }
+    } 
 }
