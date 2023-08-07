@@ -15,19 +15,14 @@ int IsNumeroPrimo(int numero){
     else
         return 0;
 }
-int main(){
-    int num;
-
-    printf("Digite um numero: ");
-    scanf("%d", &num);
-
+int main(int argc, char *argv){
     //printf("%d", num);
 
-    if(IsNumeroPrimo(num) == 1){
-        printf("O numero eh primo!");
+    if(IsNumeroPrimo(argv[1]) == 1){
+        printf("1");
     }
     else{
-        printf("O numero nao eh primo!");
+        printf("0");
     }
-    
+    return 0;
 }
