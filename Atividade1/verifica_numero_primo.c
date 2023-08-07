@@ -15,7 +15,7 @@ int IsNumeroPrimo(int numero){
     else
         return 0;
 }
-int main(int argc, char *argv){
+int main(int argc, int argv[]){
     //printf("%d", num);
 
     if(IsNumeroPrimo(argv[1]) == 1){
@@ -24,5 +24,4 @@ int main(int argc, char *argv){
     else{
         printf("0");
     }
-    return 0;
 }
