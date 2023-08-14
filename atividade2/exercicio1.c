@@ -19,8 +19,8 @@ int SomarArray(int length, int* array){
 
 int main(){
     int array[] = {5, 7, 9, 6, 13};
-    int length = (sizeof(array) / sizeof(int));
+    int length = (sizeof(array) / sizeof(int)); //tamanho do array
     
-    printf("%d", SomarArray(length, array));
-    
+    printf("%d", SomarArray(length, array)); 
+    //esprado 40
 }

@@ -25,5 +25,5 @@ int main(){
     int length = (sizeof(array) / sizeof(int));
     
     printf("%d", ContadorNumero(length, array, 9));
-    //esperado 5, 13
+    //esperado 5
 }
