@@ -5,8 +5,8 @@
     Exemplo: soma_array([5, 7, 9,6])
     Saída: 27 
 */
-
 #include <stdio.h>
+
 int SomarArray(int length, int* array){
     int soma = 0;
     
