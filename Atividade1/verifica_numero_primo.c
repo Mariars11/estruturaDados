@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+#include <stdlib.h>
 
 int IsNumeroPrimo(int numero){
     int resultado = 0;
