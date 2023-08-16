@@ -38,5 +38,6 @@ int main(){
     }
 
     printf("%d", resultadoFinal);
-    //esprado 40
+    //esprado 1
+    return 0;
 }

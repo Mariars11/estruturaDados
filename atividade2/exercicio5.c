@@ -46,4 +46,6 @@ int main(){
     else{
         printf("O tamanho dos arrays nao eh igual!");
     }
+
+    return 0;
 }

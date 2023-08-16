@@ -22,5 +22,6 @@ int main(){
     int length = (sizeof(array) / sizeof(int)); //tamanho do array
     
     printf("%d", SomarArray(length, array)); 
-    //esprado 40
+    //esperado 40
+    return 0;
 }

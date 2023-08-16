@@ -40,5 +40,6 @@ int main(){
     int length = (sizeof(array) / sizeof(int));
     
     printf("%d, %d", MenorNumero(length, array), MaiorNumero(length, array));
-    //esperado 5, 13
+    //esperado 5, 42
+    return 0;
 }

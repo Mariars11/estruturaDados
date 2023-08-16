@@ -21,9 +21,10 @@ int ContadorNumero(int length, int* array, int busca){
 }
 
 int main(){
-    int array[] = {1,1,1,3,3,3,3,9,9,9,9,9}; // 1 (3), 3 (4), 9 (4)
+    int array[] = {1,1,1,3,3,3,3,9,9,9,9,9}; // 1 (3), 3 (4), 9 (5)
     int length = (sizeof(array) / sizeof(int));
     
     printf("%d", ContadorNumero(length, array, 9));
     //esperado 5
+    return 0;
 }
