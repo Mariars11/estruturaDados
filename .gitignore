@@ -1,2 +1,5 @@
 *.exe
 ArquivosOutput
+.vscode
+bin
+.vs
