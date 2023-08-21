@@ -13,7 +13,7 @@
 int BuscaString(int length, char *array, char *busca){
     int booleano = 0;
     for(int i = 0; i < length; i++){
-        if(busca == array){
+        if(busca == array){ //possibilidade de usar o strcmp
             booleano = 1;
         }
     }
