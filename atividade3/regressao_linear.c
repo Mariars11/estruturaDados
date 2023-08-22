@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){
         pontos[j].y = atof(token_y);
         //incrementa
         j++;
-        //limpa o buffer 
+        //limpa o espaço de memoria
         free(linha); 
     }
     //definicao de variaveis
