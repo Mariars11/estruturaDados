@@ -9,27 +9,35 @@ typedef struct Ponto{
 
 
 int main(int argc, char* argv[]){
-    FILE *stream = fopen(argv[1], "r"); //abre o arquivo digitado como argumento
-    int j = 0; //contador para o while
-    char line[101]; //linhas a serem lidas 
-    struct Ponto pontos[100]; //array do struct
-
-    while (fgets(line, 101, stream)) //lê as linhas
+    //abre o arquivo passado como argumento
+    FILE *stream = fopen(argv[1], "r"); 
+    //contador para o while
+    int j = 0;
+    //linhas a serem lidas  
+    char line[101];
+    //array do struct 
+    struct Ponto pontos[100]; 
+    //lê as linhas
+    while (fgets(line, 101, stream)) 
     {
-        char* linha = _strdup(line); //alocação de memoria
+        //alocação de memoria com malloc e copia na string linha
+        char* linha = _strdup(line); 
         //pontos x
         char* token_x = strtok(linha, ",");
         pontos[j].x = atoi(token_x);
         //pontos y
         char * token_y = strtok(NULL, "");
         pontos[j].y = atof(token_y);
-
-        j++; //incrementa
-        free(linha); //limpa o buffer
+        //incrementa
+        j++;
+        //limpa o buffer 
+        free(linha); 
     }
-
-    float media_x, media_y, soma_x = 0, soma_y = 0; //definicao de variaveis
-    int somatorio = 0; //somatorio da formula
+    //definicao de variaveis
+    float media_x, media_y, soma_x = 0, soma_y = 0;
+    //somatorio da formula 
+    int somatorio = 0;
+    //for para somas 
     for(int i = 1; i < j; i++){
         soma_x += pontos[i].x;
         soma_y += pontos[i].y;
