@@ -10,7 +10,7 @@ typedef struct Ponto{
 
 int main(int argc, char* argv[]){
     //abre o arquivo passado como argumento
-    FILE *stream = fopen(argv[1], "r"); 
+    FILE *stream = fopen(argv[1], "r"); //"r" - read
     //contador para o while
     int j = 0;
     //linhas a serem lidas  
@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
     //array do struct 
     struct Ponto pontos[100]; 
     //lê as linhas
-    while (fgets(line, 101, stream)) 
+    while (fgets(line, 101, stream)) //feof - lê até o final do arquivo
     {
         //alocação de memoria com malloc e copia na string linha
         char* linha = _strdup(line); 
@@ -33,6 +33,7 @@ int main(int argc, char* argv[]){
         //limpa o espaço de memoria
         free(linha); 
     }
+    //fseek - redefine onde o o cursor estará no arquivo
     //definicao de variaveis
     float media_x, media_y, soma_x = 0, soma_y = 0;
     //somatorio da formula 
@@ -53,6 +54,7 @@ int main(int argc, char* argv[]){
     //impressao conforme solicitado
     printf("y = %.1fx + %d", inclinacao, intercepcao);
 
+    fclose(stream);
     return 0;
 }
        
