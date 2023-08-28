@@ -1,4 +1,6 @@
 *.exe
+*.dat
+*.txt
 ArquivosOutput
 .vscode
 bin
