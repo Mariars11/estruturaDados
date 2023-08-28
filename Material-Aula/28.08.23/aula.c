@@ -1,22 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//estrutura heterogenea
-typedef struct Ponto{ //o tipo
-    int x;
-    float y;
-    char* label;
-} Ponto; //nome do tipo
 
 int main(int argc, char* argv[]){
-    Ponto p;
-    
-    p.x = 1;
-    p.y = 1.8;
-    p.label = malloc(sizeof(char) * 5); //questao do espaco
-    strcpy(p.label, "Ponto 1"); //copia uma string na variavel
+    FILE *stream;
 
-    printf("(%d, %.2f) - %s", p.x, p.y, p.label); //p.label++ - o endereço incrementa um; ++p.label - pula uma posicao do caracter e incrementa um no endereço
-    printf("\n%p", p.label); //imprime o endereço na memoria
-    return 0;
+    stream = fopen("teste.txt", "r"); 
+    //r - abre um arquivo existente para leitura
+    //w - se arquivo não existir, criado; se ele já existir é recriado
+    //a - se existir ele escreve em cima
+
+    if(stream == NULL){
+        perror("Não foi possivel abrir o arquivo");
+        exit(1);
+    }
+    
+    fprintf(stream, "ola, mundo"); //escreve em um arquivo
+
+    int c;
+
+    while(c != EOF){ //End of File
+        c = fgetc(stream);
+        printf("%c", c);
+    }
+    fclose(stream);
+
+    FILE *streamBin;
+
+    streamBin = fopen("bin.dat", "w");
+
+    if(streamBin == NULL){
+        perror("Não foi possivel abrir o arquivo");
+        exit(1);
+    }
+    int i = 2;
+    fwrite (&i, sizeof(1), 1, streamBin);
+
+    int a[] = {1,2};
+    fwrite (&a, sizeof(int), 2, streamBin);
+
+    fclose(streamBin);
+
+    streamBin = fopen("bin.dat", "r");
+
+    if(streamBin == NULL){
+        perror("Não foi possivel abrir o arquivo");
+        exit(1);
+    }
+
+    int num;
+    
+    fread(&num, sizeof(int), a, streamBin);
+    while(!feof(streamBin)){
+        printf("%d\n", num);
+        fread(&num, sizeof(int), a, streamBin);
+    }
+
+    fclose(streamBin);
 }
