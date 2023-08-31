@@ -1,4 +1,4 @@
-# Estrutura de Dados
+# Estrutura de Dados :open_file_folder:
 
 - Comandos
     - gcc -v 
@@ -8,7 +8,7 @@
     - .\program
         Roda o programa
 
-## Arquivos
+## Arquivos :scroll:
 
 - 3 Arquivos básicos em todos os programas
     - stdin
