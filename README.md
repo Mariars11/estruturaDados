@@ -26,3 +26,11 @@
     - main.c - chamada das funções
 
 > gcc main.c bubbleSort.c -o main
+
+## Biblioteca string.h
+- strcmp: comparação entre strings
+    -  "0": conteúdo das strings são iguais
+    - "< 0": conteúdo da string1 é menor do que string2
+    - "> 0": conteúdo da string1 é maior do que string2 
+
+- tolower: string em caixa baixa
