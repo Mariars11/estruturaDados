@@ -17,3 +17,12 @@
         - Arquivo de saída padrão
     - stderr
         - Arquivo de erro padrão
+
+## Usar mais de um arquivo
+
+- Exemplo
+    - bubbleSort.h - definição das funções
+    - bubbleSort.c - implementação das funções
+    - main.c - chamada das funções
+
+> gcc main.c bubbleSort.c -o main
