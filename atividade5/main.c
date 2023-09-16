@@ -1,59 +1,61 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "bubble_sort.h"
+#include <string.h>
 
-int main(int argc, char* argv[]){
-    //abrir o arquivo
-    FILE *stream = fopen(argv[1], "r"); 
-    //Tratativa caso o arquivo dê erro
+int main(int argc, char *argv[]){
+    //Abrir o arquivo "arq_palavras.txt"
+    FILE *stream = fopen(argv[1], "r");
+    //Tratativa de erro
     if(stream == NULL){
-        perror("Não foi possivel abrir o arquivo");
+        perror("Nao foi possivel abrir o arquivo");
         exit(1);
     }
-    //quantidade de linhas para criação do array
-    int qt_linhas = 0;
-    //linhas a serem lidas  
-    char line[101];
-    //contagem das linhas
+    //Para contar as linhas que tem no arquivo
+    int qtd_linhas = 0;
+    char line[5];
+
     while (fgets(line, 101, stream)) 
     {
-        qt_linhas++;
+        qtd_linhas++;
     }
-    //criação do array de palavras
-    char *array[qt_linhas];
-    int j = 0;
-    //fechar o arquivo para poder lê-lo de novo
+    //Fecha para reabrir
     fclose(stream);
-    stream = fopen(argv[1], "r"); 
+    //Definição de array de strings
+    char *array_string[qtd_linhas];
+    //Reabrir o arquivo para leitura das linhas
+    stream = fopen(argv[1], "r");
+
+    int j = 0; //count
     
-    if(stream == NULL){
-        perror("Não foi possivel abrir o arquivo");
-        exit(1);
-    }
-    //aloca no array as palavras
     while (fgets(line, 101, stream)) 
     {
-        array[j] = _strdup(line); //faz o malloc e o strcpy
+        char *linha = _strdup(line); //Aloca com o malloc e copia com o strcpy
+        array_string[j] = linha; 
         j++;
-    }
-    fclose(stream);
 
-    int length = sizeof(array) / sizeof(char*);
-    bubble_sort(array, length);
+    }
+    int length = sizeof(array_string) / sizeof(char*); //quantidade de elementos no array
+
+    bubble_sort(array_string, length); //faz o bubbleSort
     
+    //Saída num novo arquivo
     FILE *streamSaida = fopen("arq_palavras_ordenado.txt", "w");
 
     if(streamSaida == NULL){
         perror("Não foi possivel abrir o arquivo");
-        exit(1);
     }
-
+    //Imprime no arquivo
     for(int i = 0; i < length; i++){
-        fprintf(streamSaida, "%s\n", array[i]);
+        if(i != length - 1){
+            fprintf(streamSaida, "%s\n", array_string[i]);
+        }
+        else{
+            fprintf(streamSaida, "%s", array_string[i]);
+        }
     }
 
-    fclose(streamSaida);
+    fclose(streamSaida); //fecha o arquivo
     
     return 0;
 }
