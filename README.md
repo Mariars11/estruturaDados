@@ -34,3 +34,6 @@
     - "> 0": conteúdo da string1 é maior do que string2 
 
 - tolower: string em caixa baixa
+
+## Pilha :battery:
+- LIFO - last in first out

@@ -13,9 +13,9 @@ int main(int argc, char *argv[]){
     }
     //Para contar as linhas que tem no arquivo
     int qtd_linhas = 0;
-    char line[5];
+    char line[20];
 
-    while (fgets(line, 101, stream)) 
+    while (fgets(line, 20, stream)  != NULL) 
     {
         qtd_linhas++;
     }
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 
     int j = 0; //count
     
-    while (fgets(line, 101, stream)) 
+    while (fgets(line, 20, stream)  != NULL) 
     {
         char *linha = _strdup(line); //Aloca com o malloc e copia com o strcpy
         array_string[j] = linha; 
