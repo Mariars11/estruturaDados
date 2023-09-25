@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
     Fila* F = fila();
     enfileirar(&o1, F);
     enfileirar(&o2, F);
+    enfileirar(&o3, F);
+
 
     do{
         o = desenfileirar(F);
