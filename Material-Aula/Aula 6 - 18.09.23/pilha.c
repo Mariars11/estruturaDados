@@ -3,24 +3,26 @@
 #include "pilha.h"
 
 Pilha* pilha(){
-    Pilha p;
-    p.obj_topo = NULL;
-    p.quantidade = 0;
-    Pilha *p1 = &p;
-    
+    Pilha *p1 = (Pilha*) malloc(sizeof(Pilha));
+    p1->topo = NULL;
+    p1->quantidade = 0;
     return p1;
 }
-void empilhar(Objeto *o, Pilha *p)
-{
-    o->proximo_objeto = p->obj_topo;
-    p->obj_topo = o;
-    p->quantidade++;
-}
-Objeto* desempilhar(Pilha *p)
-{
-    Objeto* o = p->obj_topo;
-    p->obj_topo = o->proximo_objeto;
-    p->quantidade--;
 
+void empilhar(Objeto* o, Pilha* P){
+    printf("empilhando %c\n", o->valor);
+    o->proximo_objeto = P->topo;
+    P->topo = o;
+    P->quantidade += 1;
+}
+
+Objeto* desempilhar(Pilha* P){
+    if(P->quantidade == 0){
+        return NULL;
+    }
+    Objeto* o = P->topo;
+    printf("desempilhando %c\n", o->valor);
+    P->topo = o->proximo_objeto;
+    P->quantidade--;
     return o;
 }

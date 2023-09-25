@@ -1,19 +1,13 @@
-typedef struct Objeto
-{
+typedef struct Objeto {
     char valor;
-    struct Objeto *proximo_objeto;
+    struct Objeto* proximo_objeto;
 } Objeto;
 
-
-
-typedef struct Pilha
-{
-    Objeto *obj_topo;
+typedef struct {
+    Objeto* topo;
     int quantidade;
-} Pilha; //apontar para o primeiro elemento da lista, quantidade de objetos na pilha
+} Pilha;
 
 Pilha* pilha();
-
-void empilhar(Objeto *o, Pilha *p);
-Objeto* desempilhar(Pilha *p);
-
+void empilhar(Objeto* o, Pilha* P);
+Objeto* desempilhar(Pilha* P);
