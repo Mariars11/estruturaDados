@@ -37,3 +37,8 @@
 
 ## Pilha :battery:
 - LIFO - last in first out
+- Estrutura de lista encadeada 
+
+## Fila
+- FIFO - first in first out
+- Estrutura de lista encadeada 

@@ -6,6 +6,7 @@ int main(int argc, char* argv[]){
     // // Pilha 
     //Last in first out - LIFO
     //usado no navegador, por exemplo
+    // Estrutura de lista encadeada 
     Objeto o1;
     Objeto o2;
     Objeto* o;

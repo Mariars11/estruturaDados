@@ -9,14 +9,14 @@ Pilha* pilha(){
     return p1;
 }
 
-void empilhar(Objeto* o, Pilha* P){
+void empilhar(Objeto* o, Pilha* P){ //push
     printf("empilhando %c\n", o->valor);
     o->proximo_objeto = P->topo;
     P->topo = o;
     P->quantidade += 1;
 }
 
-Objeto* desempilhar(Pilha* P){
+Objeto* desempilhar(Pilha* P){ //pop
     if(P->quantidade == 0){
         return NULL;
     }
