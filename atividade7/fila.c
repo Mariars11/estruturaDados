@@ -10,7 +10,7 @@ Fila* fila(){
 }
 
 void enfileirar(Pessoa* o, Fila* F){ //dequeue
-    printf("\n\t + Senha %c salva para atendimento\n", o->senha);
+    printf("\n\t + Senha %d salva para atendimento\n", o->senha);
     if(F->inicio == NULL) //Se estiver vazio, o objeto é o inicio e o fim
     {
         F->inicio = o;
@@ -29,7 +29,7 @@ Pessoa* desenfileirar(Fila* F){ //queue
         return NULL;
     }
     Pessoa* o = F->inicio; //Recebe o objeto ao inicio
-    printf("\n\t - Senha %c atendida\n", o->senha);
+    printf("\n\t - Cliente %s (senha: %d) atendido\n", o->nome, o->senha);
     F->inicio = o->objetoAnterior; //Atualiza o novo inicio
     F->quantidade--;
     return o; //retorna o objeto que estava no inicio

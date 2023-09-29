@@ -1,5 +1,6 @@
 typedef struct Pessoa {
-    char senha;
+    int senha;
+    char nome[120];
     struct Pessoa* objetoAnterior;
 } Pessoa;
 

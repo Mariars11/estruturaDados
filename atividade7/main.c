@@ -8,58 +8,93 @@
 int main(int argc, char *argv[])
 {
     printf("\t\tSISTEMA DE FILAS - FILA BANCO\n");
-    Pessoa p1;
-    Pessoa p2;
-    Pessoa p3;
-    Pessoa* p;
-    //distribuição de senhas
-    p1.senha = 'A'; 
-    p2.senha = 'B';
-    p3.senha = 'C';
+    int opcao, senha = 0;
 
-    
     Fila* F = fila();
-    enfileirar(&p1, F);
-    enfileirar(&p2, F);
-    enfileirar(&p3, F);
+    Pessoa pessoas[100];
+    Pessoa *p;
+
+    printf("\n\t1 - Retire um senha");
+    printf("\n\t2 - Atenda um cliente");
+    printf("\n\t5 - Va para sistema de pilha");
 
 
     do{
-        p = desenfileirar(F);
-    }while(p != NULL);
-    
-    
-    
-    int opcao = 0;
-    scanf("%d", &opcao);
+        printf("\n\n\t-> Escolha: ");
+        scanf("%d", &opcao);
+        
+        fflush(stdin);
+        switch (opcao)
+        {
+            case 1:{
+                printf("\n\t-> Informe o nome: ");
+                fgets(pessoas[senha].nome, 120, stdin);
+                pessoas[senha].senha = senha;
 
-    if(opcao != 0){
-        system("cls");
-    }
+                enfileirar(&pessoas[senha], F);
+                break;
+            }
+            case 2:{
+                do{
+                    p = desenfileirar(F);
+                }while(p != NULL);
+                break;
+            }
+            case 5:{
+                system("cls");
+                break;
+            }
+            
+            default:
+                break;
+        }
+        senha++;
+    }while(opcao != 5);
+
+    int count = 0;
+    opcao = 0;
+    
+    Pilha* P = pilha();
+    Objeto objs[100];
+    Objeto  *o;
+    
     printf("\t\tSISTEMA DE PILHAS - Baralho de Cartas\n");
     
-    Objeto o1;
-    Objeto o2;
-    Objeto o3;
-    Objeto o4;
+    printf("\n\t1 - Adicione uma carta");
+    printf("\n\t2 - Retire uma carta");
+    printf("\n\t5 - Sair do sistema");
 
-
-    Objeto* o;
-    o1.valor = 'A';
-    o2.valor = '1';
-    o3.valor = '2';
-    o4.valor = '4';
-
-
-    Pilha* P = pilha();
-    empilhar(&o1, P);
-    empilhar(&o2, P);
-    empilhar(&o3, P);
-    empilhar(&o4, P);
 
     do{
-        o = desempilhar(P);
-    }while(o != NULL);
+        printf("\n\n\t-> Escolha: ");
+        scanf("%d", &opcao);
+        
+        fflush(stdin);
+        switch (opcao)
+        {
+            case 1:{
+                printf("\n\t-> Informe a carta: ");
+                scanf("%c", &objs[count].valor);
 
+                empilhar(&objs[count], P);
+                break;
+            }
+            case 2:{
+                do{
+                    o = desempilhar(P);
+                }while(o != NULL);
+                break;
+            }
+            case 5:{
+                system("cls");
+                break;
+            }
+            
+            default:
+                break;
+        }
+        count++;
+    }while(opcao != 5);
+    
     exit(0);
 }
