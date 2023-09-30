@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     Pessoa pessoas[100];
     Pessoa *p;
 
-    printf("\n\t1 - Retire um senha");
+    printf("\n\t1 - Retire uma senha");
     printf("\n\t2 - Atenda um cliente");
     printf("\n\t5 - Va para sistema de pilha");
 
