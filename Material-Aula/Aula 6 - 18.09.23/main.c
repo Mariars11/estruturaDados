@@ -14,15 +14,17 @@ int main(int argc, char* argv[]){
     o2.valor = 'B';
 
     Pilha* P = pilha();
-    empilhar(&o1, P);
-    empilhar(&o2, P);
+    // empilhar(&o1, P);
+    // empilhar(&o2, P);
+o = desempilhar(P);
+printf("%c\n", o->valor);
 
-    do{
-        o = desempilhar(P);
-        if(o != NULL){
-            printf("%c\n", o->valor);
-        }
-    }while(o != NULL);
+    // do{
+    //     o = desempilhar(P);
+    //     if(o != NULL){
+    //         printf("%c\n", o->valor);
+    //     }
+    // }while(o != NULL);
 
     exit(0);
 }

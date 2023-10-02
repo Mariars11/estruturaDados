@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
             }
             
             default:
+                printf("\nOpcao invalida");
                 break;
         }
         senha++;
@@ -91,6 +92,7 @@ int main(int argc, char *argv[])
             }
             
             default:
+            printf("\nOpcao invalida!");
                 break;
         }
         count++;
