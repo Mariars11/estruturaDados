@@ -11,3 +11,4 @@ void lista_imprimir(No *H);
 int lista_quantidade_nos(No *H);
 No *copiar_lista(No *C);
 void concatenar_lista(No *H, No * Hc);
+void liberar_lista(No* H);

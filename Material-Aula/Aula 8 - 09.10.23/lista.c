@@ -23,6 +23,9 @@ void lista_imprimir(No *H){
     if(H != NULL){
         printf("No: %c\n", H->valor);
         lista_imprimir(H->proximo_no);
+    }
+    else{
+        printf("A lista esta vazia!\n");
     }   
 }
 int lista_quantidade_nos(No *H){
@@ -41,4 +44,13 @@ No *copiar_lista(No *C){
 }
 void concatenar_lista(No *H, No * Hc){
     lista_inserir_no(H, Hc);
+}
+//verificar erro aqui
+void liberar_lista(No* H){
+    if(H != NULL){
+        No* tmp;
+        tmp = H->proximo_no;
+        liberar_lista(tmp);
+        free(H);
+    }
 }

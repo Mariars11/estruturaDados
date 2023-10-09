@@ -36,5 +36,8 @@ int main(int argc, char *argv[])
     concatenar_lista(n0, copiar_lista(n0));
     printf("\nLista Concatenada:\n");
     lista_imprimir(n0);
+    printf("\nLimpando a lista...\n");
+    liberar_lista(n0);
+    lista_imprimir(n0);
     return 0;
 }
