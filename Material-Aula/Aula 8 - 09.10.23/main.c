@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -13,6 +14,7 @@ int main(int argc, char *argv[])
     No *n2 = no('M', NULL);
     No *n3 = no('F', NULL);
     No *n4 = no('R', NULL);
+    No *n7 = no('R', NULL);
     No *n5 = no('J', NULL);
     No *n6 = no('W', NULL);
 
@@ -22,6 +24,7 @@ int main(int argc, char *argv[])
     lista_inserir_no(n0, n3);
     lista_inserir_no(n0, n4);
     lista_inserir_no(n0, n5);
+    lista_inserir_no(n0, n7);
 
     
 
@@ -36,8 +39,11 @@ int main(int argc, char *argv[])
     concatenar_lista(n0, copiar_lista(n0));
     printf("\nLista Concatenada:\n");
     lista_imprimir(n0);
-    printf("\nLimpando a lista...\n");
-    liberar_lista(n0);
-    lista_imprimir(n0);
+    printf("Quantidade de Cs: %d", lista_verificar_ocorrencias(n0, 'R'));
+    printf("Existe C: %d", lista_verificar_existencia(n0, 'A'));
+
+    //printf("\nLimpando a lista...\n");
+    //liberar_lista(n0);
+    //lista_imprimir(n0);
     return 0;
 }

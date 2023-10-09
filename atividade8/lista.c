@@ -24,9 +24,6 @@ void lista_imprimir(No *H){
     if(H != NULL){
         printf("No: %c\n", H->valor);
         lista_imprimir(H->proximo_no);
-    }
-    else{
-        printf("A lista esta vazia!\n");
     }   
 }
 int lista_quantidade_nos(No *H){
@@ -46,7 +43,6 @@ No *copiar_lista(No *C){
 void concatenar_lista(No *H, No * Hc){
     lista_inserir_no(H, Hc);
 }
-//verificar erro aqui
 void liberar_lista(No* H){
     if(H != NULL){
         liberar_lista(H->proximo_no);
@@ -77,13 +73,33 @@ int lista_verificar_existencia(No *H, char valor_busca){
     }
     return 0;
 }
-void lista_imprimir_inversa(No *H){
+No *inverter_lista(No *H){
 
+    if(H->proximo_no==NULL)
+        return H;
+
+    No *q = inverter_lista(H->proximo_no);
+
+    H->proximo_no->proximo_no=H;
+    H->proximo_no=NULL;
+
+    return q; // q stores value of the new head.
+}
+void lista_imprimir_inversa(No *H){
+    lista_imprimir(inverter_lista(H));
 }
 void lista_inserir_no_i(No *H, int i){
+    //Adicionar um novo nó
+    No *novo_no = no('B', NULL);
+    while(i != 1){
+        H = H->proximo_no;
+        i--;
+    }
 
+    novo_no->proximo_no = H->proximo_no;
+    H->proximo_no = novo_no;
 }
-void lista_remover_no_i(No* L, int i){
+void lista_remover_no_i(No* H, int i){
 
 }
 void lista_remover_no(No *H, char valor_busca){
