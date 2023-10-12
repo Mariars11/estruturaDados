@@ -17,5 +17,6 @@ int lista_verificar_existencia(No *H, char valor_busca); //ok
 No *inverter_lista(No *H);
 void lista_imprimir_inversa(No *H);
 void lista_inserir_no_i(No *H, int i);
-void lista_remover_no_i(No* H, int i);
+void lista_remover_no_i(No **H, int i);
 void lista_remover_no(No *H, char valor_busca);
+int encontrar_posicao(No *H, char valor_busca, int posicao);

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
-#include <string.h>
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
@@ -23,17 +23,22 @@ int main(int argc, char *argv[])
     printf("\nLista original\n");
     lista_imprimir(n0);
     printf("\nVerifica existencia:");
-    printf("\nExiste A: %d", lista_verificar_existencia(n0, 'A'));
+    printf("\nExiste A: %d", lista_verificar_existencia(n0, 'a'));
     printf("\nVerifica ocorrencia:");
-    printf("\nQuantidade de Rs: %d", lista_verificar_ocorrencias(n0, 'R'));
+    printf("\nQuantidade de Rs: %d", lista_verificar_ocorrencias(n0, 'r'));
     printf("\nLista Inversa\n");
     No *listaCopiada = copiar_lista(n0);
     lista_imprimir_inversa(listaCopiada);
-    printf("\nLista inserir posicao 3\n");
+    printf("\nLista inserir B posicao 3\n");
     lista_inserir_no_i(n0, 3);
+    lista_imprimir(n0);
+    printf("\nLista remover M posicao 2\n");
+    lista_remover_no_i(&n0, 2);
+    lista_imprimir(n0);
+    printf("\nLista remover Rs\n");
+    lista_remover_no(n0, 'r');
     lista_imprimir(n0);
     liberar_lista(n0);
     liberar_lista(listaCopiada);
-
     return 0;
 }
