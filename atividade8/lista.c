@@ -96,7 +96,7 @@ No *inverter_lista(No *H){
     H->proximo_no->proximo_no=H;
     H->proximo_no=NULL;
 
-    return r; // 
+    return r; 
 }
 void lista_imprimir_inversa(No *H){
     lista_imprimir(inverter_lista(H));
