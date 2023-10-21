@@ -21,9 +21,9 @@ int main(int argc, char *argv[]){
     while (fscanf(stream, "%f", &numero) == 1) {
         lista_inserir_no(&Desordenado, numero);
         qtdLinhas++;
-        if((qtdLinhas % 10000) == 0){
-            printf("\nlinhas desordenado: %lld", qtdLinhas);
-        }
+        // if((qtdLinhas % 10000) == 0){
+        //     printf("\nlinhas desordenado: %lld", qtdLinhas);
+        // }
     }
     
     clock_t end_desordenado = clock();
@@ -38,9 +38,9 @@ int main(int argc, char *argv[]){
     while (fscanf(stream, "%f", &numero) == 1) {
         lista_inserir_no_ordenado(&Ordenado, numero);
         qtdLinhas++;
-        if((qtdLinhas % 100000) == 0){
-            printf("\nlinhas ordenado: %lld", qtdLinhas);
-        }
+        // if((qtdLinhas % 100000) == 0){
+        //     printf("\nlinhas ordenado: %lld", qtdLinhas);
+        // }
     }
     
     clock_t end_ordenado = clock();
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]){
     // lista_imprimir(Desordenado);
     // printf("\nLista Ordenada\n");
     // lista_imprimir(Ordenado);
-    printf("linhas: %lld", qtdLinhas);
+    //printf("linhas: %lld", qtdLinhas);
     printf("\nTempo do ordenado: %f", seconds_ordenado / qtdLinhas);
 
     fclose(stream);

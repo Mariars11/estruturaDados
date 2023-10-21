@@ -30,7 +30,6 @@ void lista_inserir_no_ordenado(No** L, float valor) {
         *L = novo_no;
     }
     else{
-        // Otherwise, find the last element that is smaller than this node
         No *needle = *L;
         while (1) {
             if (needle->proximo_no == NULL)
