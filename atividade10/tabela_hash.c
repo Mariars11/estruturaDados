@@ -14,9 +14,8 @@ int hash(char *pais){
     for(int i = 0; i < length; i++){
         hash_value += pais[i];
         hash_value = (hash_value * pais[i]) % TABLE_SIZE;
-
     }
-
+    
     return hash_value;
 }
 void init_hash_table(){
@@ -27,30 +26,45 @@ void init_hash_table(){
 void print_table(){
     for(int i = 0; i < TABLE_SIZE; i++){
         if(hash_table[i] == NULL){
-            printf("\t%d\t---", i);
+            printf("\n\t%d\t---", i);
         }
         else{
-            printf("\t%d\t%s", i, hash_table[i]->capital);
+            printf("\n\t%d\t%s\t%s", hash_table[i]->index, hash_table[i]->pais, hash_table[i]->capital);
         }
     }
 }
 void hash_table_put(char* chave, char* dado){
-    printf("\n%s", chave);
-    printf("\n%s", dado);
-
     if(chave != ""){
         int index = hash(chave);
-        printf("\n%d", index);
+        while(hash_table[index] != NULL){
+            index++;
+        }
         if(hash_table[index] != NULL){
-            printf("Valor indisponivel");
+            printf("\nValor (%d) indisponivel!", index);
         }
         else{
-            printf("\nentrei");
             struct Item *item = (struct Item*) malloc(sizeof(struct Item));
-            strcpy(chave, item->pais);
-            strcpy(dado, item->capital);
-
+            item->pais = _strdup(chave);
+            item->capital = _strdup(dado);
+            item->index = index;
             hash_table[index] = item;
         }  
     }
+}
+char* hash_table_get(char* chave){
+   //get the hash 
+   int hashIndex = hash(chave);  
+	
+   //move in array until an empty 
+   while(hash_table[hashIndex] != NULL) {
+	
+      if(strcmp(hash_table[hashIndex]->pais, chave) == 0)
+         return hash_table[hashIndex]->capital; 
+			
+      //go to next cell
+      ++hashIndex;
+		
+   }        
+	
+   return NULL;        
 }

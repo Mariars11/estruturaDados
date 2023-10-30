@@ -1,9 +1,7 @@
-#define MAX_CHARS 256
-#define TABLE_SIZE 10
-
 typedef struct Item {
-   char pais[MAX_CHARS];   
-   char capital[MAX_CHARS];
+   char *pais;   
+   char *capital;
+   int index;
 } Item;
 
 char* hash_table_get(char* chave);
