@@ -1,4 +1,5 @@
-typedef struct Item {
+typedef struct Item 
+{
    char *pais;   
    char *capital;
    int index;
